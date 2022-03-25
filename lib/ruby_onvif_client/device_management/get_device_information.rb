@@ -18,7 +18,7 @@ module ONVIF
                             firmware_version: value(xml_doc, '//tds:FirmwareVersion'),
                             serial_number: value(xml_doc, '//tds:SerialNumber'),
                             hardware_id: value(xml_doc, '//tds:HardwareId'),
-                            Body: value(xml_doc, '//env:Body'),
+                            # Body: value(xml_doc, '//env:Body'),
                             all: value(xml_doc, xml_doc.to_s)
                         }
                         callback cb, success, info
