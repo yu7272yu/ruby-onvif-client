@@ -13,13 +13,13 @@ module ONVIF
                         xml_doc = Nokogiri::XML(result[:content])
                         p "=====>>>> ", xml_doc.to_s
                         puts("info=====>>>>", xml_doc.to_s)
-
                         info = {
                             mf: value(xml_doc, '//tds:Manufacturer'),
                             model: value(xml_doc, '//tds:Model'),
                             firmware_version: value(xml_doc, '//tds:FirmwareVersion'),
                             serial_number: value(xml_doc, '//tds:SerialNumber'),
-                            hardware_id: value(xml_doc, '//tds:HardwareId')
+                            hardware_id: value(xml_doc, '//tds:HardwareId'),
+                            all: value(xml_doc, xml_doc.to_s)
                         }
                         callback cb, success, info
                     else
