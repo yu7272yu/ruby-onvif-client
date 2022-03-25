@@ -11,6 +11,7 @@ module ONVIF
                 send_message message do |success, result|
                     if success
                         xml_doc = Nokogiri::XML(result[:content])
+                        p "=====>>>> ", xml_doc.to_s
                         info = {
                             mf: value(xml_doc, '//tds:Manufacturer'),
                             model: value(xml_doc, '//tds:Model'),
