@@ -12,6 +12,8 @@ module ONVIF
                     if success
                         xml_doc = Nokogiri::XML(result[:content])
                         p "=====>>>> ", xml_doc.to_s
+                        puts("info=====>>>>", xml_doc.to_s)
+
                         info = {
                             mf: value(xml_doc, '//tds:Manufacturer'),
                             model: value(xml_doc, '//tds:Model'),
